@@ -1,0 +1,31 @@
+{
+	"name": "mason-cli",
+	"version": "0.0.0",
+	"private": true,
+	"files": [ "bin", "dist", "src" ],
+	 "bin": {
+		"mason": "./bin/mason"
+	},
+	"dependencies": {
+		"amdefine": "1.0.0",
+		"argh": "0.1.4",
+		"msl": "andy-hanson/msl",
+		"mason-compile": "andy-hanson/mason-compile",
+		"source-map-support": "0.3.2"
+	},
+	"devDependencies": {
+		"gulp": "3.9.0",
+		"gulp-mason": "andy-hanson/gulp-mason",
+		"gulp-plumber": "1.0.1",
+		"gulp-sourcemaps": "1.5.2",
+		"gulp-watch": "4.3.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/andy-hanson/mason-cli"
+	},
+	"engines": {
+		"iojs": "^3.0.0"
+	},
+	"license": "WTFPL"
+}
