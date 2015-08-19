@@ -11,6 +11,7 @@
 		"argh": "0.1.4",
 		"msl": "andy-hanson/msl",
 		"mason-compile": "andy-hanson/mason-compile",
+		"mason-node-util": "andy-hanson/mason-node-util",
 		"source-map-support": "0.3.2"
 	},
 	"devDependencies": {

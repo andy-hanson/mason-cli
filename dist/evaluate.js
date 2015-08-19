@@ -1,7 +1,7 @@
 "use strict";
 if((typeof define!=="function"))var define=require("amdefine")(module);
-define(["exports","fs","mason/dist/at/q","mason/dist/at/Map/Id-Map","mason/dist/at/Map/Map","mason/dist/Object","source-map-support","./compile-warn-and-throw"],(exports,fs_0,_63_1,Id_45Map_2,Map_3,Object_4,source_45map_45support_5,compile_45warn_45and_45throw_6)=>{
-	const _$2=_ms.getModule(fs_0),readFileSync=_ms.get(_$2,"readFileSync"),realpathSync=_ms.get(_$2,"realpathSync"),_$3=_ms.getModule(_63_1),Some=_ms.get(_$3,"Some"),Id_45Map=_ms.getDefaultExport(Id_45Map_2),_$5=_ms.getModule(Map_3),assoc_33=_ms.get(_$5,"assoc!"),_63get=_ms.get(_$5,"?get"),_$6=_ms.getModule(Object_4),p_43_33=_ms.get(_$6,"p+!"),send_33=_ms.get(_$6,"send!"),_$7=_ms.getModule(source_45map_45support_5),install=_ms.get(_$7,"install"),retrieveSourceMap=_ms.get(_$7,"retrieveSourceMap"),compile_45warn_45and_45throw=_ms.getDefaultExport(compile_45warn_45and_45throw_6);
+define(["exports","fs","mason-node-util/dist/compile-warn-and-throw","msl/dist/at/q","msl/dist/at/Map/Id-Map","msl/dist/at/Map/Map","msl/dist/Object","source-map-support"],(exports,fs_0,compile_45warn_45and_45throw_1,_63_2,Id_45Map_3,Map_4,Object_5,source_45map_45support_6)=>{
+	const _$2=_ms.getModule(fs_0),readFileSync=_ms.get(_$2,"readFileSync"),realpathSync=_ms.get(_$2,"realpathSync"),compile_45warn_45and_45throw=_ms.getDefaultExport(compile_45warn_45and_45throw_1),_$4=_ms.getModule(_63_2),Some=_ms.get(_$4,"Some"),Id_45Map=_ms.getDefaultExport(Id_45Map_3),_$6=_ms.getModule(Map_4),assoc_33=_ms.get(_$6,"assoc!"),_63get=_ms.get(_$6,"?get"),_$7=_ms.getModule(Object_5),p_43_33=_ms.get(_$7,"p+!"),send_33=_ms.get(_$7,"send!"),_$8=_ms.getModule(source_45map_45support_6),install=_ms.get(_$8,"install"),retrieveSourceMap=_ms.get(_$8,"retrieveSourceMap");
 	const source_45maps=new (Id_45Map)();
 	const old_45retrieveSourceMap=retrieveSourceMap;
 	install((()=>{

@@ -1,11 +1,11 @@
 use
 	fs readFileSync realpathSync
+	mason-node-util.dist.compile-warn-and-throw
 	msl.dist.@.? Some
 	msl.dist.@.Map.Id-Map
 	msl.dist.@.Map.Map assoc! ?get
 	msl.dist.Object p+! send!
 	source-map-support install retrieveSourceMap
-	.compile-warn-and-throw
 
 source-maps = new Id-Map
 

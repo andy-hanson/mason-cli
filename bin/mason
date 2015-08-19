@@ -5,7 +5,7 @@ const
 	fs = require('fs')
 
 // TODO: should not be necessary
-require('mason/dist/private/boot-order')._get.get()
+require('msl/dist/private/boot-order')._get.get()
 
 const dist = path.join(path.dirname(fs.realpathSync(__filename)), '../dist')
 require(dist).default()
