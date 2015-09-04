@@ -1,10 +1,7 @@
-# TODO: Shouldn't be necessary
-use!
-	msl.dist.private.boot-order
-use
+import
+	global require
 	argh
 	fs realpathSync
-	msl.dist.compare =?
 	mason-compile.dist.CompileError
 	mason-node-util.dist.compile-warn-and-throw
 	mason-node-util.dist.register
@@ -17,50 +14,47 @@ fail! = !|message
 	exit 1
 
 usage! = !|
-	fail! "Usage: mason (compile|run|version) file-name [--checks] [--warn-as-error]"
+	fail! "Usage: mason (compile|run|version) file-name [--checks]"
 
 !|
 	args = argh.argv
 
-	unless! args.argv
+	unless args.argv
 		usage!()
 
 	~in-file =
-		unless! =? 2 args.argv.length
+		unless =? 2 args.argv.length
 			usage!()
 		args.argv[1]
 
 	options =
 		checks. args.checks
-		warn-as-error. args.warn-as-error
 		includeAmdefine. true
-		includeSourceMap. true
-		includeModuleName. true
-		forceNonLazyModule. true
+		mslPath. 'msl/dist
 		useStrict. true
 
 	for! Object.keys args
-		unless! :[ "argv" "checks" "warn-as-error" ]
+		unless :['argv 'checks]
 			usage!()
 
-	switch! args.argv[0]
-		"compile"
-			src = readFileSync in-file "utf-8"
+	switch args.argv[0]
+		'compile
+			src = readFileSync in-file 'utf-8
 			res = except
 				try
 					compile-warn-and-throw src in-file options
 				catch
-					# TODO:SYNTAX catch _:CompileError
+					| TODO:SYNTAX catch _:CompileError
 					case
 						:CompileError
 							fail! (((_.message.split "\n").slice 1).join "\n")
 						else
-							throw! _
+							throw _
 			console.log res.code
-		"run"
+		'run
 			register options
 			require (realpathSync in-file)
-		"version"
+		'version
 			console.log version
 		else
 			usage!()

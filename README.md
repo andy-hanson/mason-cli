@@ -1,11 +1,12 @@
-Command line interface for [mason](https://andy-hanson.github.io/mason).
+Command line interface for [mason](https://mason-lang.org).
 
 This is meant for testing and quick scripting.
-For projects use [gulp-mason](https://github.com/andy-hanson/gulp-mason).
+For projects use a [build system](https://mason-lang.github.io/tools#build).
+
 
 ## install
 
-	sudo npm install -g andy-hanson/mason-cli
+	sudo npm install -g mason-lang/mason-cli
 
 
 ## Run

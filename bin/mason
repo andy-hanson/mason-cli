@@ -1,11 +1,2 @@
 #!/usr/bin/env node
-
-const
-	path = require('path'),
-	fs = require('fs')
-
-// TODO: should not be necessary
-require('msl/dist/private/boot-order')._get.get()
-
-const dist = path.join(path.dirname(fs.realpathSync(__filename)), '../dist')
-require(dist).default()
+require('../lib').default()
