@@ -2,9 +2,11 @@
 	"name": "mason-cli",
 	"version": "0.0.0",
 	"files": ["bin", "lib", "src"],
-	 "bin": {"mason": "./bin/mason"},
+	"repository": "mason-lang/mason-cli",
+	"license": "WTFPL",
+	"bin": {"mason": "./bin/mason"},
 	"scripts": {
-		"prepublish": "gulp compile",
+		"build": "gulp compile",
 		"watch": "gulp watch"
 	},
 	"dependencies": {
@@ -13,18 +15,13 @@
 		"msl": "mason-lang/msl",
 		"mason-compile": "mason-lang/mason-compile",
 		"mason-node-util": "mason-lang/mason-node-util",
-		"source-map-support": "0.3.2"
+		"source-map-support": "0.3.3"
 	},
 	"devDependencies": {
 		"gulp": "3.9.0",
-		"gulp-mason": "andy-hanson/gulp-mason",
+		"gulp-mason": "mason-lang/gulp-mason",
 		"gulp-plumber": "1.0.1",
 		"gulp-sourcemaps": "1.6.0",
 		"gulp-watch": "4.3.5"
-	},
-	"repository": "andy-hanson/mason-cli",
-	"engines": {
-		"iojs": "^3.0.0"
-	},
-	"license": "WTFPL"
+	}
 }

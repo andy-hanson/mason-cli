@@ -2,6 +2,7 @@ import
 	global require
 	argh
 	fs realpathSync
+	mason-compile.dist.Compiler
 	mason-compile.dist.CompileError
 	mason-node-util.dist.compile-warn-and-throw
 	mason-node-util.dist.register
@@ -22,7 +23,7 @@ usage! = !|
 	unless args.argv
 		usage!()
 
-	~in-file =
+	~filename =
 		unless =? 2 args.argv.length
 			usage!()
 		args.argv[1]
@@ -33,27 +34,23 @@ usage! = !|
 		mslPath. 'msl/dist
 		useStrict. true
 
-	for! Object.keys args
+	for Object.keys args
 		unless :['argv 'checks]
 			usage!()
 
 	switch args.argv[0]
 		'compile
-			src = readFileSync in-file 'utf-8
+			code = readFileSync filename 'utf-8
+			compiler = new Compiler options
 			res = except
 				try
-					compile-warn-and-throw src in-file options
-				catch
-					| TODO:SYNTAX catch _:CompileError
-					case
-						:CompileError
-							fail! (((_.message.split "\n").slice 1).join "\n")
-						else
-							throw _
+					compile-warn-and-throw compiler code filename
+				catch :CompileError
+					fail! (((_.message.split "\n").slice 1).join "\n")
 			console.log res.code
 		'run
-			register options
-			require (realpathSync in-file)
+			register new Compiler options
+			require (realpathSync filename)
 		'version
 			console.log version
 		else
