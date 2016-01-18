@@ -2,22 +2,22 @@ import
 	global require
 	argh
 	fs realpathSync
-	mason-compile.dist.Compiler
-	mason-compile.dist.CompileError
-	mason-node-util.dist.compile-warn-and-throw
-	mason-node-util.dist.register
+	mason-compile.lib.Compiler
+	mason-compile.lib.CompileError
+	mason-node-util.lib.compile-warn-and-throw
+	mason-node-util.lib.register
 	process exit
 	fs readFileSync
 	..package version
 
-fail! = !|message
+fail! = !\message
 	console.error message
 	exit 1
 
-usage! = !|
+usage! = !\
 	fail! "Usage: mason (compile|run|version) file-name [--checks]"
 
-!|
+!\
 	args = argh.argv
 
 	unless args.argv
@@ -31,7 +31,7 @@ usage! = !|
 	options =
 		checks. args.checks
 		includeAmdefine. true
-		mslPath. 'msl/dist
+		mslPath. 'msl/lib
 		useStrict. true
 
 	for Object.keys args

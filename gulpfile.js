@@ -20,7 +20,7 @@ const
 	pipeCompile = stream =>
 		stream
 		.pipe(sourcemaps.init())
-		.pipe(mason({includeAmdefine: true, mslPath: 'msl/dist'}))
+		.pipe(mason({includeAmdefine: true, mslPath: 'msl/lib'}))
 		.pipe(sourcemaps.write({
 			debug: true,
 			includeContent: false,

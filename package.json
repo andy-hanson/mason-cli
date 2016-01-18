@@ -2,8 +2,8 @@
 	"name": "mason-cli",
 	"version": "0.0.0",
 	"files": ["bin", "lib", "src"],
+	"license": "Unlicense",
 	"repository": "mason-lang/mason-cli",
-	"license": "WTFPL",
 	"bin": {"mason": "./bin/mason"},
 	"scripts": {
 		"build": "gulp compile",
